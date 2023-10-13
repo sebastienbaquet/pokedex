@@ -29,27 +29,17 @@ const pokemonList = [
 
  
 
- function Card() {
-
-  const [pokemonIndex,setPokemonIndex] = useState(0);
-
-const precedent = () => {setPokemonIndex(pokemonIndex -1)};
-const suivant= () =>{setPokemonIndex(pokemonIndex +1)};
-
+  function card() {
+    const [pokemonIndex, setPokemonIndex] = useState(0);
+  
     return (
-      <div>
-
-      <NavBar pokemonIndex={pokemonIndex}
-             pokemonList={pokemonList}
-            suivant = {suivant}
-             precedent= {precedent}/>
-
-       < PokemonCard pokemon={pokemonList[pokemonIndex]}/>
-    
-      </div>
-    
+      <>
+        <NavBar pokemonIndex={pokemonIndex} setPokemonIndex={setPokemonIndex} pokemonList={pokemonList} />
+        <PokemonCard pokemon={pokemonList[pokemonIndex]} />
+      </>
     );
   }
-  export default Card;
+  
+  export default card;
 
   
